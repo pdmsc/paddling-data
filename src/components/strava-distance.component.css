@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .app-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .app-logo {
+    width: 80px;
+    height: auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #3f51b5;
+    margin: 10px 0;
+  }
+  
+  .form-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  .input-field {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .activity-list {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .filter-title {
+    margin-bottom: 20px;
+  }
+
+  .progress-bar {
+    margin-top: 40px;
+  }
+  

@@ -1,0 +1,52 @@
+<div class="container">
+    <!-- Logo and App Title -->
+    <div class="app-header">
+      <img src="/assets/paddle-logo.jpg" alt="PaddlingData Logo" class="app-logo">
+      <h1>PaddlingData</h1>
+    </div>
+  
+    <!-- Form Card -->
+    <mat-card *ngIf="userLoggedIn; else loginPrompt" class="form-card">
+      <mat-card-title class="filter-title">Filter Activities</mat-card-title>
+  
+      <div class="filter-controls">
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Select Start Date</mat-label>
+          <input matInput type="date" [(ngModel)]="selectedStartDate">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="input-field">
+            <mat-label>Select End Date</mat-label>
+            <input matInput type="date" [(ngModel)]="selectedEndDate">
+          </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="input-field">
+          <mat-label>Select Activity Type</mat-label>
+          <mat-select [(ngModel)]="selectedActivityType">
+            <mat-option *ngFor="let type of activityTypes" [value]="type">
+              {{ type }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" (click)="fetchActivities()">Calculate Distance</button>
+      </div>
+  
+      <!-- Progress Bar shown while activities are loading -->
+    <mat-progress-bar class="progress-bar" *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+    <!-- Distance display section, only visible after calculation and no input changes -->
+    <div class="activity-list" *ngIf="totalDistance !== null && !isInputChanged">
+        <p>Total distance covered in {{ selectedActivityType }} between {{ selectedStartDate }} and {{selectedEndDate}} : <strong>{{ totalDistance | number: '1.2-2' }} km</strong></p>
+    </div>
+    </mat-card>
+  
+    <!-- Login Prompt -->
+    <ng-template #loginPrompt>
+      <mat-card class="login-card">
+        <p>Please log in to view your activities. Clicking this button will redirect you to Strava to enter your credentials.</p>
+        <button mat-raised-button color="accent" (click)="authenticateWithStrava()">Log In with Strava</button>
+      </mat-card>
+    </ng-template>
+</div>
+  
