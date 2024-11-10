@@ -15,7 +15,7 @@ export class StravaService {
   private readonly apiUrl = 'https://www.strava.com/api/v3/athlete/activities';
   private readonly clientId = environment.clientId;  // Replace with your Strava Client ID
   private readonly clientSecret = environment.clientSecret;  // Replace with your Strava Client Secret
-  private readonly redirectUri = 'http://localhost:4200/auth/strava-redirect';
+  private readonly redirectUri = environment.redirectUri;
 
   constructor(private http: HttpClient) {}
 
