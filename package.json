@@ -31,6 +31,7 @@
     "@angular/compiler-cli": "^18.2.0",
     "@ngx-env/builder": "^18.0.2",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^22.9.0",
     "dotenv": "^16.4.5",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
